@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  RewriteBase /
+
+  # If request is NOT a file
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  # If request is NOT a directory
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Redirect everything to index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
